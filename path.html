@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>পাঠ - Learning Skills</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f7fc;
+    margin:0;
+    padding:20px;
+}
+
+header{
+    background:#0066cc;
+    color:white;
+    text-align:center;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.lesson-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.lesson-card{
+    background:white;
+    padding:15px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.lesson-card:hover{
+    transform:translateY(-5px);
+}
+
+.lesson-card h2{
+    color:#0066cc;
+    margin-bottom:10px;
+}
+
+.btn{
+    display:inline-block;
+    background:#0066cc;
+    color:white;
+    padding:10px 15px;
+    text-decoration:none;
+    border-radius:8px;
+    margin-top:10px;
+}
+
+footer{
+    background:#002244;
+    color:white;
+    text-align:center;
+    padding:15px;
+    border-radius:10px;
+    margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>📖 পাঠসমূহ</h1>
+    <p>বিষয়ভিত্তিক লিখিত পাঠ ও নোট</p>
+</header>
+
+<div class="lesson-grid">
+
+    <div class="lesson-card">
+        <h2>➕ গণিত</h2>
+        <p>গণিতের গুরুত্বপূর্ণ অধ্যায় ও সমাধান</p>
+        <a href="math.html" class="btn">পড়ুন</a>
+    </div>
+
+    <div class="lesson-card">
+        <h2>📘 বাংলা</h2>
+        <p>ব্যাকরণ, রচনা ও ভাষা শিক্ষা</p>
+        <a href="bangla.html" class="btn">পড়ুন</a>
+    </div>
+
+    <div class="lesson-card">
+        <h2>📗 ইংরেজি</h2>
+        <p>Grammar, Writing ও English Skills</p>
+        <a href="english.html" class="btn">পড়ুন</a>
+    </div>
+
+    <div class="lesson-card">
+        <h2>🌍 সাধারণ জ্ঞান</h2>
+        <p>গুরুত্বপূর্ণ তথ্য ও জ্ঞানভান্ডার</p>
+        <a href="gk.html" class="btn">পড়ুন</a>
+    </div>
+
+</div>
+
+<div style="text-align:center; margin-top:20px;">
+    <a href="index.html" class="btn">🏠 Back to Home</a>
+</div>
+
+<footer>
+    © 2026 Learning Skills | All Rights Reserved
+</footer>
+
+</body>
+</html>
