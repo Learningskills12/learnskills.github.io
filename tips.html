@@ -3,15 +3,106 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Tips & Tricks</title>
+<title>Tips & Tricks - Learning Skills</title>
+
+<style>
+body{
+    font-family:Arial,sans-serif;
+    background:#f4f7fc;
+    margin:0;
+    padding:20px;
+}
+
+header{
+    background:#0066cc;
+    color:white;
+    text-align:center;
+    padding:20px;
+    border-radius:10px;
+    margin-bottom:20px;
+}
+
+.lesson-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+}
+
+.lesson-card{
+    background:white;
+    padding:15px;
+    border-radius:12px;
+    text-align:center;
+    box-shadow:0 3px 10px rgba(0,0,0,0.1);
+}
+
+.lesson-card h2{
+    color:#0066cc;
+}
+
+.btn{
+    display:inline-block;
+    background:#ff9800;
+    color:white;
+    padding:10px 15px;
+    text-decoration:none;
+    border-radius:8px;
+    margin-top:10px;
+}
+
+footer{
+    background:#002244;
+    color:white;
+    text-align:center;
+    padding:15px;
+    border-radius:10px;
+    margin-top:20px;
+}
+</style>
 </head>
+
 <body>
 
-<h1>💡 Tips & Tricks</h1>
+<header>
+    <h1>💡 Tips & Tricks</h1>
+    <p>পড়াশোনা, প্রযুক্তি ও দৈনন্দিন জীবনের টিপস</p>
+</header>
 
-<p>এখানে পড়াশোনা, প্রযুক্তি ও সাধারণ জীবনের বিভিন্ন টিপস প্রকাশ করা হবে।</p>
+<div class="lesson-grid">
 
-<a href="index.html">🏠Back to Home</a>
+    <div class="lesson-card">
+        <h2>📚 পড়াশোনার টিপস</h2>
+        <p>সহজে পড়া মনে রাখার কৌশল</p>
+        <a href="#" class="btn">দেখুন</a>
+    </div>
+
+    <div class="lesson-card">
+        <h2>📱 মোবাইল টিপস</h2>
+        <p>মোবাইল ব্যবহারের প্রয়োজনীয় কৌশল</p>
+        <a href="#" class="btn">দেখুন</a>
+    </div>
+
+    <div class="lesson-card">
+        <h2>💻 কম্পিউটার টিপস</h2>
+        <p>কম্পিউটারের গুরুত্বপূর্ণ শর্টকাট</p>
+        <a href="#" class="btn">দেখুন</a>
+    </div>
+
+    <div class="lesson-card">
+        <h2>🌐 ইন্টারনেট টিপস</h2>
+        <p>নিরাপদে ইন্টারনেট ব্যবহারের উপায়</p>
+        <a href="#" class="btn">দেখুন</a>
+    </div>
+
+</div>
+
+<div style="text-align:center; margin-top:20px;">
+    <a href="index.html" class="btn">🏠 Back to Home</a>
+</div>
+
+<footer>
+    © 2026 Learning Skills | All Rights Reserved
+</footer>
 
 </body>
 </html>
