@@ -3,133 +3,1280 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Quiz Section</title>
+
+<title>MCQ Quiz | Learning Skills</title>
 
 <style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
 body{
-    font-family: Arial, sans-serif;
-    background:#f4f7fc;
-    margin:0;
-    padding:20px;
+background:#eef5ff;
+}
+
+/* Header */
+
+header{
+
+background:linear-gradient(135deg,#1565C0,#42A5F5);
+
+color:white;
+
+text-align:center;
+
+padding:30px 15px;
+
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+
+}
+
+header h1{
+
+font-size:34px;
+
+margin-bottom:10px;
+
+}
+
+header p{
+
+font-size:18px;
+
+opacity:.95;
+
+}
+
+/* Navigation */
+
+.nav{
+
+text-align:center;
+
+margin:25px 0;
+
+}
+
+.nav a{
+
+display:inline-block;
+
+background:#1565C0;
+
+color:white;
+
+padding:12px 22px;
+
+margin:6px;
+
+border-radius:12px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+transition:.3s;
+
+}
+
+.nav a:hover{
+
+background:#0D47A1;
+
+transform:translateY(-2px);
+
+}
+
+/* Quiz Card */
+
+.quiz-card{
+
+max-width:850px;
+
+margin:25px auto;
+
+background:white;
+
+border-left:8px solid #1565C0;
+
+padding:22px;
+
+border-radius:18px;
+
+box-shadow:0 8px 20px rgba(0,0,0,.12);
+
+transition:.3s;
+
+}
+
+.quiz-card:hover{
+
+transform:translateY(-5px);
+
+}
+
+/* Question */
+
+.quiz-card h3{
+
+color:#1565C0;
+
+margin-bottom:12px;
+
+}
+
+.quiz-card p{
+
+font-size:18px;
+
+line-height:1.8;
+
+}
+
+/* Badge */
+
+.badge{
+
+display:inline-block;
+
+padding:6px 12px;
+
+border-radius:30px;
+
+font-size:14px;
+
+font-weight:bold;
+
+margin-right:8px;
+
+margin-bottom:10px;
+
+color:white;
+
+}
+
+.math{background:#1976D2;}
+
+.bangla{background:#8E24AA;}
+
+.english{background:#2E7D32;}
+
+.science{background:#F57C00;}
+
+.history{background:#6D4C41;}
+
+.geography{background:#00897B;}
+
+.gk{background:#D81B60;}
+
+.easy{background:#43A047;}
+
+.medium{background:#FB8C00;}
+
+.hard{background:#E53935;}
+
+/* Answer */
+
+details{
+
+margin-top:15px;
+
+}
+
+summary{
+
+cursor:pointer;
+
+font-weight:bold;
+
+color:#2E7D32;
+
+font-size:17px;
+
+}
+
+details p{
+
+margin-top:10px;
+
+background:#E8F5E9;
+
+padding:12px;
+
+border-radius:10px;
+
+font-weight:bold;
+
+}
+
+/* Home Button */
+
+.home{
+
+text-align:center;
+
+margin:40px 0;
+
+}
+
+.home a{
+
+background:#1565C0;
+
+color:white;
+
+padding:14px 28px;
+
+border-radius:12px;
+
+text-decoration:none;
+
+font-weight:bold;
+
+}
+
+.home a:hover{
+
+background:#0D47A1;
+
+}
+
+/* Footer */
+
+footer{
+
+background:#1565C0;
+
+color:white;
+
+text-align:center;
+
+padding:20px;
+
+margin-top:40px;
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+header h1{
+
+font-size:26px;
+
 }
 
 .quiz-card{
-    max-width:700px;
-    margin:auto;
-    background:white;
-    padding:25px;
-    border-radius:15px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.1);
+
+margin:15px;
+
 }
 
-h2{
-    color:#1e88e5;
 }
 
-.option{
-    display:block;
-    background:#eef3ff;
-    padding:12px;
-    margin:10px 0;
-    border-radius:10px;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.option:hover{
-    background:#dbe7ff;
-}
-
-button{
-    background:#1e88e5;
-    color:white;
-    border:none;
-    padding:12px 20px;
-    border-radius:8px;
-    cursor:pointer;
-    margin-top:10px;
-}
-
-button:hover{
-    background:#1565c0;
-}
-
-#result{
-    margin-top:15px;
-    font-weight:bold;
-    font-size:18px;
-}
-
-.home-btn{
-    display:inline-block;
-    background:#1e88e5;
-    color:white;
-    padding:12px 20px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
-}
 </style>
+
 </head>
 
 <body>
 
-<div class="quiz-card">
-<h3>প্রশ্ন ১ (গণিত)</h3>
-<p>√144 এর মান কত?</p>
-<p>A) 10</p>
-<p>B) 11</p>
-<p>C) 12</p>
-<p>D) 14</p>
+<header>
 
-<details>
-<summary>উত্তর দেখুন</summary>
-<p>✅ সঠিক উত্তর: C) 12</p>
-</details>
+<h1>📚 Learning Skills Quiz</h1>
+
+<p>Class 5–7 | West Bengal | MCQ Practice</p>
+
+</header>
+
+<div class="nav">
+
+<a href="quiz.html">১–১০০</a>
+
+<a href="quiz2.html">১০১–২০০</a>
+
+<a href="quiz3.html">২০১–৩০০</a>
+
 </div>
 
+<!-- এখান থেকে প্রশ্ন শুরু হবে --><!-- =================== প্রশ্ন ১ =================== -->
+
 <div class="quiz-card">
-<h3>প্রশ্ন ২ (বাংলা)</h3>
-<p>'অরণ্য' শব্দের সমার্থক শব্দ কোনটি?</p>
-<p>A) উপবন</p>
-<p>B) বন</p>
-<p>C) মরুভূমি</p>
-<p>D) পাহাড়</p>
+
+<span class="badge math">🧮 গণিত</span>
+<span class="badge easy">🟢 সহজ</span>
+
+<h3>প্রশ্ন ১</h3>
+
+<p>√225 এর মান কত?</p>
+
+<p>🔘 A) ১২</p>
+<p>🔘 B) ১৩</p>
+<p>🔘 C) ১৫</p>
+<p>🔘 D) ১৮</p>
 
 <details>
-<summary>উত্তর দেখুন</summary>
-<p>✅ সঠিক উত্তর: B) বন</p>
+
+<summary>✅ উত্তর দেখুন</summary>
+
+<p>সঠিক উত্তর: <b>C) ১৫</b></p>
+
 </details>
+
 </div>
 
+<!-- =================== প্রশ্ন ২ =================== -->
+
 <div class="quiz-card">
-<h3>প্রশ্ন ৩ (ইতিহাস)</h3>
+
+<span class="badge bangla">📖 বাংলা</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ২</h3>
+
+<p>'অমৃত' শব্দের বিপরীত শব্দ কোনটি?</p>
+
+<p>🔘 A) বিষ</p>
+<p>🔘 B) জল</p>
+<p>🔘 C) খাদ্য</p>
+<p>🔘 D) অন্ন</p>
+
+<details>
+
+<summary>✅ উত্তর দেখুন</summary>
+
+<p>সঠিক উত্তর: <b>A) বিষ</b></p>
+
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ৩ =================== -->
+
+<div class="quiz-card">
+
+<span class="badge english">🇬🇧 ইংরেজি</span>
+<span class="badge easy">🟢 সহজ</span>
+
+<h3>প্রশ্ন ৩</h3>
+
+<p>Choose the correct synonym of "Happy".</p>
+
+<p>🔘 A) Sad</p>
+<p>🔘 B) Joyful</p>
+<p>🔘 C) Angry</p>
+<p>🔘 D) Weak</p>
+
+<details>
+
+<summary>✅ উত্তর দেখুন</summary>
+
+<p>সঠিক উত্তর: <b>B) Joyful</b></p>
+
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ৪ =================== -->
+
+<div class="quiz-card">
+
+<span class="badge science">🔬 বিজ্ঞান</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ৪</h3>
+
+<p>মানবদেহের সবচেয়ে বড় অঙ্গ কোনটি?</p>
+
+<p>🔘 A) যকৃত</p>
+<p>🔘 B) হৃদপিণ্ড</p>
+<p>🔘 C) ত্বক</p>
+<p>🔘 D) ফুসফুস</p>
+
+<details>
+
+<summary>✅ উত্তর দেখুন</summary>
+
+<p>সঠিক উত্তর: <b>C) ত্বক</b></p>
+
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ৫ =================== -->
+
+<div class="quiz-card">
+
+<span class="badge history">📜 ইতিহাস</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ৫</h3>
+
 <p>পলাশীর যুদ্ধ কত সালে হয়?</p>
-<p>A) 1756</p>
-<p>B) 1757</p>
-<p>C) 1761</p>
-<p>D) 1764</p>
+
+<p>🔘 A) ১৭৫৬</p>
+<p>🔘 B) ১৭৫৭</p>
+<p>🔘 C) ১৭৬১</p>
+<p>🔘 D) ১৮৫৭</p>
 
 <details>
-<summary>উত্তর দেখুন</summary>
-<p>✅ সঠিক উত্তর: B) 1757</p>
+
+<summary>✅ উত্তর দেখুন</summary>
+
+<p>সঠিক উত্তর: <b>B) ১৭৫৭</b></p>
+
 </details>
+
 </div>
+
+<!-- =================== প্রশ্ন ৬ =================== -->
 
 <div class="quiz-card">
-<h3>প্রশ্ন ৪ (GK)</h3>
-<p>ভারতের জাতীয় সঙ্গীত কে রচনা করেন?</p>
-<p>A) বঙ্কিমচন্দ্র চট্টোপাধ্যায়</p>
-<p>B) রবীন্দ্রনাথ ঠাকুর</p>
-<p>C) কাজী নজরুল ইসলাম</p>
-<p>D) শরৎচন্দ্র চট্টোপাধ্যায়</p>
+
+<span class="badge geography">🌍 ভূগোল</span>
+<span class="badge easy">🟢 সহজ</span>
+
+<h3>প্রশ্ন ৬</h3>
+
+<p>ভারতের রাজধানী কোনটি?</p>
+
+<p>🔘 A) কলকাতা</p>
+<p>🔘 B) মুম্বাই</p>
+<p>🔘 C) নয়াদিল্লি</p>
+<p>🔘 D) চেন্নাই</p>
 
 <details>
-<summary>উত্তর দেখুন</summary>
-<p>✅ সঠিক উত্তর: B) রবীন্দ্রনাথ ঠাকুর</p>
+
+<summary>✅ উত্তর দেখুন</summary>
+
+<p>সঠিক উত্তর: <b>C) নয়াদিল্লি</b></p>
+
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ৭ =================== -->
+
+<div class="quiz-card">
+
+<span class="badge gk">🧠 সাধারণ জ্ঞান</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ৭</h3>
+
+<p>ভারতের জাতীয় সঙ্গীত কে রচনা করেছেন?</p>
+
+<p>🔘 A) বঙ্কিমচন্দ্র</p>
+<p>🔘 B) রবীন্দ্রনাথ ঠাকুর</p>
+<p>🔘 C) নজরুল ইসলাম</p>
+<p>🔘 D) বিদ্যাসাগর</p>
+
+<details>
+
+<summary>✅ উত্তর দেখুন</summary>
+
+<p>সঠিক উত্তর: <b>B) রবীন্দ্রনাথ ঠাকুর</b></p>
+
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ৮ =================== -->
+
+<div class="quiz-card">
+
+<span class="badge math">🧮 গণিত</span>
+<span class="badge hard">🔴 কঠিন</span>
+
+<h3>প্রশ্ন ৮</h3>
+
+<p>3/4 + 5/8 = ?</p>
+
+<p>🔘 A) 1 3/8</p>
+<p>🔘 B) 1 1/4</p>
+<p>🔘 C) 1 5/8</p>
+<p>🔘 D) 7/8</p>
+
+<details>
+
+<summary>✅ উত্তর দেখুন</summary>
+
+<p>সঠিক উত্তর: <b>A) 1 3/8</b></p>
+
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ৯ =================== -->
+
+<div class="quiz-card">
+
+<span class="badge bangla">📖 বাংলা</span>
+<span class="badge hard">🔴 কঠিন</span>
+
+<h3>প্রশ্ন ৯</h3>
+
+<p>'নদী' শব্দটি কোন পদ?</p>
+
+<p>🔘 A) বিশেষ্য</p>
+<p>🔘 B) সর্বনাম</p>
+<p>🔘 C) ক্রিয়া</p>
+<p>🔘 D) বিশেষণ</p>
+
+<details>
+
+<summary>✅ উত্তর দেখুন</summary>
+
+<p>সঠিক উত্তর: <b>A) বিশেষ্য</b></p>
+
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ১০ =================== -->
+
+<div class="quiz-card">
+
+<span class="badge science">🔬 বিজ্ঞান</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ১০</h3>
+
+<p>পৃথিবীর একমাত্র প্রাকৃতিক উপগ্রহ কোনটি?</p>
+
+<p>🔘 A) মঙ্গল</p>
+<p>🔘 B) চাঁদ</p>
+<p>🔘 C) সূর্য</p>
+<p>🔘 D) শুক্র</p>
+
+<details>
+
+<summary>✅ উত্তর দেখুন</summary>
+
+<p>সঠিক উত্তর: <b>B) চাঁদ</b></p>
+
+</details>
+
+    </div>
+
+<!-- =================== প্রশ্ন ১১ =================== -->
+
+<div class="quiz-card">
+<span class="badge math">🧮 গণিত</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ১১</h3>
+
+<p>২৫² = ?</p>
+
+<p>🔘 A) ৫০০</p>
+<p>🔘 B) ৬২৫</p>
+<p>🔘 C) ৭২৫</p>
+<p>🔘 D) ৫৭৫</p>
+
+<details>
+<summary>✅ উত্তর দেখুন</summary>
+<p><b>সঠিক উত্তর: B) ৬২৫</b></p>
 </details>
 </div>
 
+<!-- =================== প্রশ্ন ১২ =================== -->
 
-</body>
-</html>
+<div class="quiz-card">
+<span class="badge english">🇬🇧 ইংরেজি</span>
+<span class="badge easy">🟢 সহজ</span>
+
+<h3>প্রশ্ন ১২</h3>
+
+<p>Plural of "Child"?</p>
+
+<p>🔘 A) Childs</p>
+<p>🔘 B) Children</p>
+<p>🔘 C) Childes</p>
+<p>🔘 D) Childrens</p>
+
+<details>
+<summary>✅ উত্তর দেখুন</summary>
+<p><b>সঠিক উত্তর: B) Children</b></p>
+</details>
+</div>
+
+<!-- =================== প্রশ্ন ১৩ =================== -->
+
+<div class="quiz-card">
+<span class="badge science">🔬 বিজ্ঞান</span>
+<span class="badge easy">🟢 সহজ</span>
+
+<h3>প্রশ্ন ১৩</h3>
+
+<p>উদ্ভিদ নিজের খাদ্য তৈরি করে কোন প্রক্রিয়ায়?</p>
+
+<p>🔘 A) শ্বসন</p>
+<p>🔘 B) সালোকসংশ্লেষ</p>
+<p>🔘 C) পরিপাক</p>
+<p>🔘 D) বাষ্পীভবন</p>
+
+<details>
+<summary>✅ উত্তর দেখুন</summary>
+<p><b>সঠিক উত্তর: B) সালোকসংশ্লেষ</b></p>
+</details>
+</div>
+
+<!-- =================== প্রশ্ন ১৪ =================== -->
+
+<div class="quiz-card">
+<span class="badge history">📜 ইতিহাস</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ১৪</h3>
+
+<p>ভারতের প্রথম রাষ্ট্রপতি কে ছিলেন?</p>
+
+<p>🔘 A) জওহরলাল নেহরু</p>
+<p>🔘 B) ড. রাজেন্দ্র প্রসাদ</p>
+<p>🔘 C) মহাত্মা গান্ধী</p>
+<p>🔘 D) সর্দার প্যাটেল</p>
+
+<details>
+<summary>✅ উত্তর দেখুন</summary>
+<p><b>সঠিক উত্তর: B) ড. রাজেন্দ্র প্রসাদ</b></p>
+</details>
+</div>
+
+<!-- =================== প্রশ্ন ১৫ =================== -->
+
+<div class="quiz-card">
+<span class="badge geography">🌍 ভূগোল</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ১৫</h3>
+
+<p>পৃথিবীর বৃহত্তম মহাসাগর কোনটি?</p>
+
+<p>🔘 A) ভারত মহাসাগর</p>
+<p>🔘 B) আটলান্টিক মহাসাগর</p>
+<p>🔘 C) প্রশান্ত মহাসাগর</p>
+<p>🔘 D) উত্তর মহাসাগর</p>
+
+<details>
+<summary>✅ উত্তর দেখুন</summary>
+<p><b>সঠিক উত্তর: C) প্রশান্ত মহাসাগর</b></p>
+</details>
+</div>
+
+<!-- =================== প্রশ্ন ১৬ =================== -->
+
+<div class="quiz-card">
+<span class="badge bangla">📖 বাংলা</span>
+<span class="badge easy">🟢 সহজ</span>
+
+<h3>প্রশ্ন ১৬</h3>
+
+<p>'সৎ' শব্দের বিপরীত শব্দ কোনটি?</p>
+
+<p>🔘 A) অসৎ</p>
+<p>🔘 B) ভালো</p>
+<p>🔘 C) ন্যায়</p>
+<p>🔘 D) সত্য</p>
+
+<details>
+<summary>✅ উত্তর দেখুন</summary>
+<p><b>সঠিক উত্তর: A) অসৎ</b></p>
+</details>
+</div>
+
+<!-- =================== প্রশ্ন ১৭ =================== -->
+
+<div class="quiz-card">
+<span class="badge gk">🧠 সাধারণ জ্ঞান</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ১৭</h3>
+
+<p>ভারতের জাতীয় পশু কোনটি?</p>
+
+<p>🔘 A) সিংহ</p>
+<p>🔘 B) রয়েল বেঙ্গল টাইগার</p>
+<p>🔘 C) হাতি</p>
+<p>🔘 D) চিতা</p>
+
+<details>
+<summary>✅ উত্তর দেখুন</summary>
+<p><b>সঠিক উত্তর: B) রয়েল বেঙ্গল টাইগার</b></p>
+</details>
+</div>
+
+<!-- =================== প্রশ্ন ১৮ =================== -->
+
+<div class="quiz-card">
+<span class="badge math">🧮 গণিত</span>
+<span class="badge hard">🔴 কঠিন</span>
+
+<h3>প্রশ্ন ১৮</h3>
+
+<p>LCM(12,18)=?</p>
+
+<p>🔘 A) ২৪</p>
+<p>🔘 B) ৩০</p>
+<p>🔘 C) ৩৬</p>
+<p>🔘 D) ৪৮</p>
+
+<details>
+<summary>✅ উত্তর দেখুন</summary>
+<p><b>সঠিক উত্তর: C) ৩৬</b></p>
+</details>
+</div>
+
+<!-- =================== প্রশ্ন ১৯ =================== -->
+
+<div class="quiz-card">
+<span class="badge english">🇬🇧 ইংরেজি</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ১৯</h3>
+
+<p>Opposite of "Early"?</p>
+
+<p>🔘 A) Fast</p>
+<p>🔘 B) Late</p>
+<p>🔘 C) Soon</p>
+<p>🔘 D) Quick</p>
+
+<details>
+<summary>✅ উত্তর দেখুন</summary>
+<p><b>সঠিক উত্তর: B) Late</b></p>
+</details>
+</div>
+
+<!-- =================== প্রশ্ন ২০ =================== -->
+
+<div class="quiz-card">
+<span class="badge science">🔬 বিজ্ঞান</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ২০</h3>
+
+<p>জলের রাসায়নিক সংকেত কী?</p>
+
+<p>🔘 A) CO₂</p>
+<p>🔘 B) H₂O</p>
+<p>🔘 C) O₂</p>
+<p>🔘 D) NaCl</p>
+
+<details>
+<summary>✅ উত্তর দেখুন</summary>
+<p><b>সঠিক উত্তর: B) H₂O</b></p>
+</details>
+</div>
+
+<!-- প্রশ্ন ২১–২৫ একই স্টাইলে -->
+<!-- =================== প্রশ্ন ২১ =================== -->
+
+<div class="quiz-card">
+
+<span class="badge history">📜 ইতিহাস</span>
+<span class="badge easy">🟢 সহজ</span>
+
+<h3>প্রশ্ন ২১</h3>
+
+<p>ভারতের স্বাধীনতা দিবস কবে পালিত হয়?</p>
+
+<p>🔘 A) ১৫ আগস্ট</p>
+<p>🔘 B) ২৬ জানুয়ারি</p>
+<p>🔘 C) ২ অক্টোবর</p>
+<p>🔘 D) ১৪ নভেম্বর</p>
+
+<details>
+
+<summary>✅ উত্তর দেখুন</summary>
+
+<p><b>সঠিক উত্তর: A) ১৫ আগস্ট</b></p>
+
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ২২ =================== -->
+
+<div class="quiz-card">
+
+<span class="badge geography">🌍 ভূগোল</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ২২</h3>
+
+<p>পশ্চিমবঙ্গের রাজধানী কোনটি?</p>
+
+<p>🔘 A) দুর্গাপুর</p>
+<p>🔘 B) শিলিগুড়ি</p>
+<p>🔘 C) কলকাতা</p>
+<p>🔘 D) আসানসোল</p>
+
+<details>
+
+<summary>✅ উত্তর দেখুন</summary>
+
+<p><b>সঠিক উত্তর: C) কলকাতা</b></p>
+
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ২৩ =================== -->
+
+<div class="quiz-card">
+
+<span class="badge science">🔬 বিজ্ঞান</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ২৩</h3>
+
+<p>মানবদেহে মোট কয়টি দাঁত থাকে (প্রাপ্তবয়স্ক)?</p>
+
+<p>🔘 A) ২৮</p>
+<p>🔘 B) ৩০</p>
+<p>🔘 C) ৩২</p>
+<p>🔘 D) ৩৪</p>
+
+<details>
+
+<summary>✅ উত্তর দেখুন</summary>
+
+<p><b>সঠিক উত্তর: C) ৩২</b></p>
+
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ২৪ =================== -->
+
+<div class="quiz-card">
+
+<span class="badge math">🧮 গণিত</span>
+<span class="badge hard">🔴 কঠিন</span>
+
+<h3>প্রশ্ন ২৪</h3>
+
+<p>7 × 9 + 8 = ?</p>
+
+<p>🔘 A) ৭০</p>
+<p>🔘 B) ৭১</p>
+<p>🔘 C) ৭২</p>
+<p>🔘 D) ৬৯</p>
+
+<details>
+
+<summary>✅ উত্তর দেখুন</summary>
+
+<p><b>সঠিক উত্তর: B) ৭১</b></p>
+
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ২৫ =================== -->
+
+<div class="quiz-card">
+
+<span class="badge bangla">📖 বাংলা</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ২৫</h3>
+
+<p>'পদ্মা' কী ধরনের বিশেষ্য?</p>
+
+<p>🔘 A) জাতিবাচক বিশেষ্য</p>
+<p>🔘 B) ব্যক্তিবাচক বিশেষ্য</p>
+<p>🔘 C) বস্তুবাচক বিশেষ্য</p>
+<p>🔘 D) ভাববাচক বিশেষ্য</p>
+
+<details>
+
+<summary>✅ উত্তর দেখুন</summary>
+
+<p><b>সঠিক উত্তর: B) ব্যক্তিবাচক বিশেষ্য</b></p>
+
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ২৬ =================== -->
+
+<div class="quiz-card">
+
+<span class="badge english">🇬🇧 ইংরেজি</span>
+<span class="badge easy">🟢 সহজ</span>
+
+<h3>প্রশ্ন ২৬</h3>
+
+<p>Choose the correct article: ___ apple</p>
+
+<p>🔘 A) A</p>
+<p>🔘 B) An</p>
+<p>🔘 C) The</p>
+<p>🔘 D) No article</p>
+
+<details>
+
+<summary>✅ উত্তর দেখুন</summary>
+
+<p><b>সঠিক উত্তর: B) An</b></p>
+
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ২৭ =================== -->
+
+<div class="quiz-card">
+
+<span class="badge gk">🧠 সাধারণ জ্ঞান</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ২৭</h3>
+
+<p>ভারতের জাতীয় ফুল কোনটি?</p>
+
+<p>🔘 A) গোলাপ</p>
+<p>🔘 B) জবা</p>
+<p>🔘 C) পদ্ম</p>
+<p>🔘 D) সূর্যমুখী</p>
+
+<details>
+
+<summary>✅ উত্তর দেখুন</summary>
+
+<p><b>সঠিক উত্তর: C) পদ্ম</b></p>
+
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ২৮ =================== -->
+
+<div class="quiz-card">
+
+<span class="badge science">🔬 বিজ্ঞান</span>
+<span class="badge easy">🟢 সহজ</span>
+
+<h3>প্রশ্ন ২৮</h3>
+
+<p>শ্বাস নেওয়ার প্রধান অঙ্গ কোনটি?</p>
+
+<p>🔘 A) হৃদপিণ্ড</p>
+<p>🔘 B) যকৃত</p>
+<p>🔘 C) ফুসফুস</p>
+<p>🔘 D) মস্তিষ্ক</p>
+
+<details>
+
+<summary>✅ উত্তর দেখুন</summary>
+
+<p><b>সঠিক উত্তর: C) ফুসফুস</b></p>
+
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ২৯ =================== -->
+
+<div class="quiz-card">
+
+<span class="badge geography">🌍 ভূগোল</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ২৯</h3>
+
+<p>ভারতের দীর্ঘতম নদী কোনটি?</p>
+
+<p>🔘 A) গঙ্গা</p>
+<p>🔘 B) যমুনা</p>
+<p>🔘 C) গোদাবরী</p>
+<p>🔘 D) নর্মদা</p>
+
+<details>
+
+<summary>✅ উত্তর দেখুন</summary>
+
+<p><b>সঠিক উত্তর: A) গঙ্গা</b></p>
+
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ৩০ =================== -->
+
+<div class="quiz-card">
+
+<span class="badge math">🧮 গণিত</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ৩০</h3>
+
+<p>একটি ত্রিভুজের তিনটি কোণের সমষ্টি কত?</p>
+
+<p>🔘 A) ৯০°</p>
+<p>🔘 B) ১৮০°</p>
+<p>🔘 C) ২৭০°</p>
+<p>🔘 D) ৩৬০°</p>
+
+<details>
+
+<summary>✅ উত্তর দেখুন</summary>
+
+<p><b>সঠিক উত্তর: B) ১৮০°</b></p>
+
+</details>
+
+</div>
+<!-- =================== প্রশ্ন ৩১ =================== -->
+
+<div class="quiz-card">
+<span class="badge bangla">📖 বাংলা</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ৩১</h3>
+
+<p>'সততা' কোন ধরনের বিশেষ্য?</p>
+
+<p>🔘 A) জাতিবাচক</p>
+<p>🔘 B) ভাববাচক</p>
+<p>🔘 C) ব্যক্তিবাচক</p>
+<p>🔘 D) সমষ্টিবাচক</p>
+
+<details>
+<summary>✅ উত্তর দেখুন</summary>
+<p><b>সঠিক উত্তর: B) ভাববাচক</b></p>
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ৩২ =================== -->
+
+<div class="quiz-card">
+<span class="badge math">🧮 গণিত</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ৩২</h3>
+
+<p>15 × 12 = ?</p>
+
+<p>🔘 A) 170</p>
+<p>🔘 B) 175</p>
+<p>🔘 C) 180</p>
+<p>🔘 D) 185</p>
+
+<details>
+<summary>✅ উত্তর দেখুন</summary>
+<p><b>সঠিক উত্তর: C) 180</b></p>
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ৩৩ =================== -->
+
+<div class="quiz-card">
+<span class="badge science">🔬 বিজ্ঞান</span>
+<span class="badge easy">🟢 সহজ</span>
+
+<h3>প্রশ্ন ৩৩</h3>
+
+<p>সূর্য একটি—</p>
+
+<p>🔘 A) গ্রহ</p>
+<p>🔘 B) উপগ্রহ</p>
+<p>🔘 C) নক্ষত্র</p>
+<p>🔘 D) ধূমকেতু</p>
+
+<details>
+<summary>✅ উত্তর দেখুন</summary>
+<p><b>সঠিক উত্তর: C) নক্ষত্র</b></p>
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ৩৪ =================== -->
+
+<div class="quiz-card">
+<span class="badge history">📜 ইতিহাস</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ৩৪</h3>
+
+<p>নেতাজির পুরো নাম কী?</p>
+
+<p>🔘 A) সুভাষচন্দ্র বসু</p>
+<p>🔘 B) রবীন্দ্রনাথ ঠাকুর</p>
+<p>🔘 C) বিদ্যাসাগর</p>
+<p>🔘 D) ক্ষুদিরাম বসু</p>
+
+<details>
+<summary>✅ উত্তর দেখুন</summary>
+<p><b>সঠিক উত্তর: A) সুভাষচন্দ্র বসু</b></p>
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ৩৫ =================== -->
+
+<div class="quiz-card">
+<span class="badge geography">🌍 ভূগোল</span>
+<span class="badge easy">🟢 সহজ</span>
+
+<h3>প্রশ্ন ৩৫</h3>
+
+<p>ভারতে কয়টি রাজ্য রয়েছে?</p>
+
+<p>🔘 A) 26</p>
+<p>🔘 B) 27</p>
+<p>🔘 C) 28</p>
+<p>🔘 D) 29</p>
+
+<details>
+<summary>✅ উত্তর দেখুন</summary>
+<p><b>সঠিক উত্তর: C) 28</b></p>
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ৩৬ =================== -->
+
+<div class="quiz-card">
+<span class="badge english">🇬🇧 ইংরেজি</span>
+<span class="badge easy">🟢 সহজ</span>
+
+<h3>প্রশ্ন ৩৬</h3>
+
+<p>Past tense of "Go"?</p>
+
+<p>🔘 A) Goed</p>
+<p>🔘 B) Gone</p>
+<p>🔘 C) Went</p>
+<p>🔘 D) Going</p>
+
+<details>
+<summary>✅ উত্তর দেখুন</summary>
+<p><b>সঠিক উত্তর: C) Went</b></p>
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ৩৭ =================== -->
+
+<div class="quiz-card">
+<span class="badge gk">🧠 সাধারণ জ্ঞান</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ৩৭</h3>
+
+<p>ভারতের জাতীয় পাখি কোনটি?</p>
+
+<p>🔘 A) কাক</p>
+<p>🔘 B) ময়ূর</p>
+<p>🔘 C) টিয়া</p>
+<p>🔘 D) কবুতর</p>
+
+<details>
+<summary>✅ উত্তর দেখুন</summary>
+<p><b>সঠিক উত্তর: B) ময়ূর</b></p>
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ৩৮ =================== -->
+
+<div class="quiz-card">
+<span class="badge math">🧮 গণিত</span>
+<span class="badge hard">🔴 কঠিন</span>
+
+<h3>প্রশ্ন ৩৮</h3>
+
+<p>144 ÷ 12 = ?</p>
+
+<p>🔘 A) 10</p>
+<p>🔘 B) 11</p>
+<p>🔘 C) 12</p>
+<p>🔘 D) 13</p>
+
+<details>
+<summary>✅ উত্তর দেখুন</summary>
+<p><b>সঠিক উত্তর: C) 12</b></p>
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ৩৯ =================== -->
+
+<div class="quiz-card">
+<span class="badge science">🔬 বিজ্ঞান</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ৩৯</h3>
+
+<p>মানবদেহে রক্ত পরিশোধন করে কোন অঙ্গ?</p>
+
+<p>🔘 A) ফুসফুস</p>
+<p>🔘 B) কিডনি</p>
+<p>🔘 C) হৃদপিণ্ড</p>
+<p>🔘 D) পাকস্থলী</p>
+
+<details>
+<summary>✅ উত্তর দেখুন</summary>
+<p><b>সঠিক উত্তর: B) কিডনি</b></p>
+</details>
+
+</div>
+
+<!-- =================== প্রশ্ন ৪০ =================== -->
+
+<div class="quiz-card">
+<span class="badge bangla">📖 বাংলা</span>
+<span class="badge medium">🟡 মাঝারি</span>
+
+<h3>প্রশ্ন ৪০</h3>
+
+<p>'অরণ্য' শব্দের সমার্থক শব্দ কোনটি?</p>
+
+<p>🔘 A) বন</p>
+<p>🔘 B) নদী</p>
+<p>🔘 C) পাহাড়</p>
+<p>🔘 D) সাগর</p>
+
+<details>
+<summary>✅ উত্তর দেখুন</summary>
+<p><b>সঠিক উত্তর: A) বন</b></p>
+</details>
+
+    </div>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+    
+    
