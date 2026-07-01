@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>India GK | Learning Skills</title>
+
+<link rel="stylesheet" href="css/gk.css">
+
+</head>
+
+<body>
+
+<header>
+<h1>🇮🇳 India General Knowledge</h1>
+<p>Learning Skills</p>
+</header>
+
+<div class="container">
+
+<h2>📚 India GK</h2>
+
+<input
+type="text"
+id="search"
+placeholder="🔍 প্রশ্ন খুঁজুন..."
+onkeyup="searchQuestion()">
+
+<select id="category" onchange="filterCategory()">
+<option value="all">সব ক্যাটাগরি</option>
+<option value="History">History</option>
+<option value="Geography">Geography</option>
+<option value="Polity">Polity</option>
+<option value="Science">Science</option>
+<option value="Economy">Economy</option>
+</select>
+
+<div id="questionBox">
+
+<h3 id="question"></h3>
+
+<button onclick="showAnswer()">
+👁 উত্তর দেখুন
+</button>
+
+<p id="answer"></p>
+
+</div>
+
+<div class="buttons">
+
+<button onclick="previousQuestion()">
+⬅ Previous
+</button>
+
+<button onclick="randomQuestion()">
+🎲 Random
+</button>
+
+<button onclick="nextQuestion()">
+Next ➡
+</button>
+
+</div>
+
+</div>
+
+<script src="js/gk.js"></script>
+
+</body>
+</html>
