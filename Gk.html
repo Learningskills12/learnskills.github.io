@@ -1,54 +1,208 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 
 <title>India GK | Learning Skills</title>
 
-<link rel="stylesheet" href="css/gk.css">
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:#eef8ff;
+}
+
+header{
+background:linear-gradient(90deg,#003366,#00aaff);
+color:white;
+text-align:center;
+padding:30px 20px;
+}
+
+header h1{
+font-size:38px;
+}
+
+header p{
+margin-top:10px;
+font-size:18px;
+}
+
+.container{
+width:95%;
+max-width:900px;
+margin:auto;
+padding:20px;
+}
+
+.search-box{
+margin:20px 0;
+}
+
+.search-box input{
+
+width:100%;
+padding:14px;
+font-size:18px;
+border:2px solid #00aaff;
+border-radius:10px;
+
+}
+
+.category{
+
+margin-bottom:20px;
+
+}
+
+.category select{
+
+width:100%;
+padding:14px;
+font-size:18px;
+border:2px solid #00aaff;
+border-radius:10px;
+
+}
+
+.card{
+
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 4px 12px rgba(0,0,0,.15);
+
+}
+
+.card h2{
+
+color:#0055aa;
+margin-bottom:20px;
+
+}
+
+#question{
+
+font-size:24px;
+margin-bottom:20px;
+
+}
+
+#answer{
+
+display:none;
+margin-top:20px;
+padding:15px;
+background:#d4edda;
+border-left:5px solid green;
+border-radius:10px;
+font-size:18px;
+
+}
+
+button{
+
+background:#0088cc;
+color:white;
+border:none;
+padding:12px 20px;
+border-radius:8px;
+cursor:pointer;
+margin:5px;
+font-size:16px;
+
+}
+
+button:hover{
+
+background:#0066aa;
+
+}
+
+.btns{
+
+margin-top:25px;
+text-align:center;
+
+}
+
+.footer{
+
+margin-top:30px;
+text-align:center;
+font-size:18px;
+font-weight:bold;
+
+}
+
+</style>
 
 </head>
 
 <body>
 
 <header>
+
 <h1>🇮🇳 India General Knowledge</h1>
+
 <p>Learning Skills</p>
+
 </header>
 
 <div class="container">
 
-<h2>📚 India GK</h2>
+<div class="search-box">
 
 <input
 type="text"
 id="search"
-placeholder="🔍 প্রশ্ন খুঁজুন..."
-onkeyup="searchQuestion()">
-
-<select id="category" onchange="filterCategory()">
-<option value="all">সব ক্যাটাগরি</option>
-<option value="History">History</option>
-<option value="Geography">Geography</option>
-<option value="Polity">Polity</option>
-<option value="Science">Science</option>
-<option value="Economy">Economy</option>
-</select>
-
-<div id="questionBox">
-
-<h3 id="question"></h3>
-
-<button onclick="showAnswer()">
-👁 উত্তর দেখুন
-</button>
-
-<p id="answer"></p>
+placeholder="🔍 Search Question">
 
 </div>
 
-<div class="buttons">
+<div class="category">
+
+<select id="category">
+
+<option value="All">All Categories</option>
+
+<option value="History">History</option>
+
+<option value="Geography">Geography</option>
+
+<option value="Science">Science</option>
+
+<option value="Polity">Polity</option>
+
+<option value="Economy">Economy</option>
+
+</select>
+
+</div>
+
+<div class="card">
+
+<h2 id="catName">History</h2>
+
+<h3 id="question">
+Loading...
+</h3>
+
+<p id="answer"></p>
+
+<button onclick="showAnswer()">
+👁 Show Answer
+</button>
+
+<div class="btns">
 
 <button onclick="previousQuestion()">
 ⬅ Previous
@@ -66,7 +220,213 @@ Next ➡
 
 </div>
 
-<script src="js/gk.js"></script>
+<div class="footer">
+
+Question
+<span id="current">1</span>
+/
+<span id="total">0</span>
+
+</div>
+<script>
+
+let questions=[
+
+{
+category:"History",
+question:"ভারতের স্বাধীনতা কবে লাভ করে?",
+answer:"১৫ আগস্ট ১৯৪৭"
+},
+
+{
+category:"History",
+question:"ভারতের সংবিধান কবে কার্যকর হয়?",
+answer:"২৬ জানুয়ারি ১৯৫০"
+},
+
+{
+category:"Geography",
+question:"ভারতের রাজধানী কী?",
+answer:"নয়াদিল্লি"
+},
+
+{
+category:"Geography",
+question:"ভারতের দীর্ঘতম নদী কোনটি?",
+answer:"গঙ্গা"
+},
+
+{
+category:"Science",
+question:"মানবদেহের সবচেয়ে বড় অঙ্গ কোনটি?",
+answer:"ত্বক"
+},
+
+{
+category:"Science",
+question:"জলের রাসায়নিক সংকেত কী?",
+answer:"H₂O"
+},
+
+{
+category:"Polity",
+question:"ভারতের রাষ্ট্রপতির সরকারি বাসভবনের নাম কী?",
+answer:"রাষ্ট্রপতি ভবন"
+},
+
+{
+category:"Economy",
+question:"ভারতের কেন্দ্রীয় ব্যাংকের নাম কী?",
+answer:"Reserve Bank of India (RBI)"
+}
+
+];
+
+let current=0;
+let list=[...questions];
+
+document.getElementById("total").innerHTML=list.length;
+
+function loadQuestion(){
+
+document.getElementById("question").innerHTML=list[current].question;
+
+document.getElementById("answer").innerHTML=list[current].answer;
+
+document.getElementById("answer").style.display="none";
+
+document.getElementById("catName").innerHTML=list[current].category;
+
+document.getElementById("current").innerHTML=current+1;
+
+document.getElementById("total").innerHTML=list.length;
+
+}
+
+function showAnswer(){
+
+let ans=document.getElementById("answer");
+
+if(ans.style.display=="block"){
+
+ans.style.display="none";
+
+}else{
+
+ans.style.display="block";
+
+}
+
+}
+
+function nextQuestion(){
+
+if(current<list.length-1){
+
+current++;
+
+loadQuestion();
+
+}
+
+}
+
+function previousQuestion(){
+
+if(current>0){
+
+current--;
+
+loadQuestion();
+
+}
+
+}
+
+function randomQuestion(){
+
+current=Math.floor(Math.random()*list.length);
+
+loadQuestion();
+
+}
+
+document.getElementById("category").addEventListener("change",function(){
+
+let value=this.value;
+
+if(value=="All"){
+
+list=[...questions];
+
+}else{
+
+list=questions.filter(q=>q.category==value);
+
+}
+
+current=0;
+
+loadQuestion();
+
+});
+
+document.getElementById("search").addEventListener("keyup",function(){
+
+let text=this.value.toLowerCase();
+
+list=questions.filter(q=>
+
+q.question.toLowerCase().includes(text)
+
+);
+
+if(list.length==0){
+
+document.getElementById("question").innerHTML="কোন প্রশ্ন পাওয়া যায়নি";
+
+document.getElementById("answer").style.display="none";
+
+document.getElementById("total").innerHTML="0";
+
+return;
+
+}
+
+current=0;
+
+loadQuestion();
+
+});
+
+loadQuestion();
+
+ </script>
+
+  <footer style="background:#02284f;color:white;text-align:center;padding:20px;margin-top:40px;">
+
+<h3>Learning Skills</h3>
+
+<p>India General Knowledge</p>
+
+<a href="index.html"
+style="display:inline-block;
+margin-top:10px;
+padding:10px 20px;
+background:#00aaff;
+color:white;
+text-decoration:none;
+border-radius:8px;">
+
+🏠 Home Page
+
+</a>
+
+<p style="margin-top:20px;">
+© 2026 Learning Skills. All Rights Reserved.
+</p>
+
+</footer>
 
 </body>
 </html>
