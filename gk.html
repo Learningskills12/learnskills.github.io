@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>India GK | Learning Skills</title>
+<title>India General Knowledge | Learning Skills</title>
 
 <style>
 
@@ -24,7 +24,7 @@ header{
 background:linear-gradient(90deg,#003366,#00aaff);
 color:white;
 text-align:center;
-padding:30px 20px;
+padding:35px 15px;
 }
 
 header h1{
@@ -43,33 +43,25 @@ margin:auto;
 padding:20px;
 }
 
-.search-box{
-margin:20px 0;
-}
-
 .search-box input{
 
 width:100%;
 padding:14px;
 font-size:18px;
-border:2px solid #00aaff;
 border-radius:10px;
+border:2px solid #00aaff;
+margin-bottom:15px;
 
 }
 
-.category{
-
-margin-bottom:20px;
-
-}
-
-.category select{
+select{
 
 width:100%;
 padding:14px;
 font-size:18px;
-border:2px solid #00aaff;
 border-radius:10px;
+border:2px solid #00aaff;
+margin-bottom:20px;
 
 }
 
@@ -84,7 +76,7 @@ box-shadow:0 4px 12px rgba(0,0,0,.15);
 
 .card h2{
 
-color:#0055aa;
+color:#0077cc;
 margin-bottom:20px;
 
 }
@@ -93,31 +85,38 @@ margin-bottom:20px;
 
 font-size:24px;
 margin-bottom:20px;
+line-height:1.6;
 
 }
 
 #answer{
 
 display:none;
-margin-top:20px;
-padding:15px;
 background:#d4edda;
+padding:15px;
 border-left:5px solid green;
-border-radius:10px;
+border-radius:8px;
 font-size:18px;
+
+}
+
+.buttons{
+
+text-align:center;
+margin-top:25px;
 
 }
 
 button{
 
+padding:12px 20px;
+font-size:16px;
 background:#0088cc;
 color:white;
 border:none;
-padding:12px 20px;
 border-radius:8px;
 cursor:pointer;
 margin:5px;
-font-size:16px;
 
 }
 
@@ -127,19 +126,34 @@ background:#0066aa;
 
 }
 
-.btns{
+.counter{
 
-margin-top:25px;
 text-align:center;
+margin:20px;
+font-size:20px;
+font-weight:bold;
 
 }
 
-.footer{
+footer{
 
-margin-top:30px;
+background:#02284f;
+color:white;
 text-align:center;
-font-size:18px;
-font-weight:bold;
+padding:25px;
+margin-top:40px;
+
+}
+
+.home{
+
+display:inline-block;
+margin-top:15px;
+padding:10px 20px;
+background:#00aaff;
+color:white;
+text-decoration:none;
+border-radius:8px;
 
 }
 
@@ -164,33 +178,24 @@ font-weight:bold;
 <input
 type="text"
 id="search"
-placeholder="🔍 Search Question">
+placeholder="🔍 প্রশ্ন খুঁজুন">
 
 </div>
 
-<div class="category">
-
 <select id="category">
 
-<option value="All">All Categories</option>
-
+<option value="All">সব বিভাগ</option>
 <option value="History">History</option>
-
 <option value="Geography">Geography</option>
-
 <option value="Science">Science</option>
-
 <option value="Polity">Polity</option>
-
 <option value="Economy">Economy</option>
 
 </select>
 
-</div>
-
 <div class="card">
 
-<h2 id="catName">History</h2>
+<h2 id="cat">History</h2>
 
 <h3 id="question">
 Loading...
@@ -198,11 +203,11 @@ Loading...
 
 <p id="answer"></p>
 
-<button onclick="showAnswer()">
-👁 Show Answer
-</button>
+<div class="buttons">
 
-<div class="btns">
+<button onclick="showAnswer()">
+👁 উত্তর দেখুন
+</button>
 
 <button onclick="previousQuestion()">
 ⬅ Previous
@@ -220,7 +225,7 @@ Next ➡
 
 </div>
 
-<div class="footer">
+<div class="counter">
 
 Question
 <span id="current">1</span>
@@ -228,13 +233,20 @@ Question
 <span id="total">0</span>
 
 </div>
-<script>
 
-let questions=[
+ <script>
+
+const questions = [
 
 {
 category:"History",
-question:"ভারতের স্বাধীনতা কবে লাভ করে?",
+question:"ভারতের প্রথম প্রধানমন্ত্রী কে ছিলেন?",
+answer:"জওহরলাল নেহরু"
+},
+
+{
+category:"History",
+question:"ভারত কবে স্বাধীনতা লাভ করে?",
 answer:"১৫ আগস্ট ১৯৪৭"
 },
 
@@ -252,20 +264,26 @@ answer:"নয়াদিল্লি"
 
 {
 category:"Geography",
+question:"ভারতের বৃহত্তম রাজ্য (আয়তনে) কোনটি?",
+answer:"রাজস্থান"
+},
+
+{
+category:"Geography",
 question:"ভারতের দীর্ঘতম নদী কোনটি?",
 answer:"গঙ্গা"
 },
 
 {
 category:"Science",
-question:"মানবদেহের সবচেয়ে বড় অঙ্গ কোনটি?",
-answer:"ত্বক"
+question:"জলের রাসায়নিক সংকেত কী?",
+answer:"H₂O"
 },
 
 {
 category:"Science",
-question:"জলের রাসায়নিক সংকেত কী?",
-answer:"H₂O"
+question:"মানবদেহের সবচেয়ে বড় অঙ্গ কোনটি?",
+answer:"ত্বক"
 },
 
 {
@@ -278,101 +296,26 @@ answer:"রাষ্ট্রপতি ভবন"
 category:"Economy",
 question:"ভারতের কেন্দ্রীয় ব্যাংকের নাম কী?",
 answer:"Reserve Bank of India (RBI)"
-},
-// ===== History =====
-{
-category:"History",
-question:"ভারতের প্রথম প্রধানমন্ত্রী কে ছিলেন?",
-answer:"জওহরলাল নেহরু"
-},
-{
-category:"History",
-question:"ভারতের স্বাধীনতা দিবস কবে?",
-answer:"১৫ আগস্ট ১৯৪৭"
-},
-{
-category:"History",
-question:"ভারতের প্রজাতন্ত্র দিবস কবে?",
-answer:"২৬ জানুয়ারি"
-},
-
-// ===== Geography =====
-{
-category:"Geography",
-question:"ভারতের বৃহত্তম রাজ্য (আয়তনে) কোনটি?",
-answer:"রাজস্থান"
-},
-{
-category:"Geography",
-question:"ভারতের সর্বোচ্চ পর্বতশৃঙ্গ কোনটি?",
-answer:"কাঞ্চনজঙ্ঘা"
-},
-{
-category:"Geography",
-question:"ভারতের দীর্ঘতম নদী কোনটি?",
-answer:"গঙ্গা"
-},
-
-// ===== Science =====
-{
-category:"Science",
-question:"মানবদেহের সবচেয়ে বড় অঙ্গ কোনটি?",
-answer:"ত্বক"
-},
-{
-category:"Science",
-question:"রক্তের লাল রং কেন হয়?",
-answer:"হিমোগ্লোবিনের জন্য"
-},
-{
-category:"Science",
-question:"সূর্যের আলো পৃথিবীতে পৌঁছাতে কত সময় লাগে?",
-answer:"প্রায় ৮ মিনিট ২০ সেকেন্ড"
-},
-
-// ===== Polity =====
-{
-category:"Polity",
-question:"ভারতের বর্তমান সংবিধান কত সালে কার্যকর হয়?",
-answer:"১৯৫০"
-},
-{
-category:"Polity",
-question:"লোকসভার সদস্যদের মেয়াদ কত বছর?",
-answer:"৫ বছর"
-},
-
-// ===== Economy =====
-{
-category:"Economy",
-question:"ভারতের মুদ্রার নাম কী?",
-answer:"রুপি (Indian Rupee)"
-},
-{
-category:"Economy",
-question:"RBI-এর পূর্ণরূপ কী?",
-answer:"Reserve Bank of India"
 }
+
 ];
 
+let filtered=[...questions];
 let current=0;
-let list=[...questions];
-
-document.getElementById("total").innerHTML=list.length;
 
 function loadQuestion(){
 
-document.getElementById("question").innerHTML=list[current].question;
+document.getElementById("question").innerHTML=filtered[current].question;
 
-document.getElementById("answer").innerHTML=list[current].answer;
+document.getElementById("answer").innerHTML="✅ "+filtered[current].answer;
 
 document.getElementById("answer").style.display="none";
 
-document.getElementById("catName").innerHTML=list[current].category;
+document.getElementById("cat").innerHTML=filtered[current].category;
 
 document.getElementById("current").innerHTML=current+1;
 
-document.getElementById("total").innerHTML=list.length;
+document.getElementById("total").innerHTML=filtered.length;
 
 }
 
@@ -380,21 +323,13 @@ function showAnswer(){
 
 let ans=document.getElementById("answer");
 
-if(ans.style.display=="block"){
-
-ans.style.display="none";
-
-}else{
-
-ans.style.display="block";
-
-}
+ans.style.display=(ans.style.display=="block")?"none":"block";
 
 }
 
 function nextQuestion(){
 
-if(current<list.length-1){
+if(current<filtered.length-1){
 
 current++;
 
@@ -418,23 +353,23 @@ loadQuestion();
 
 function randomQuestion(){
 
-current=Math.floor(Math.random()*list.length);
+current=Math.floor(Math.random()*filtered.length);
 
 loadQuestion();
 
 }
 
-document.getElementById("category").addEventListener("change",function(){
+document.getElementById("category").onchange=function(){
 
 let value=this.value;
 
 if(value=="All"){
 
-list=[...questions];
+filtered=[...questions];
 
 }else{
 
-list=questions.filter(q=>q.category==value);
+filtered=questions.filter(q=>q.category===value);
 
 }
 
@@ -442,23 +377,25 @@ current=0;
 
 loadQuestion();
 
-});
+};
 
-document.getElementById("search").addEventListener("keyup",function(){
+document.getElementById("search").onkeyup=function(){
 
 let text=this.value.toLowerCase();
 
-list=questions.filter(q=>
+filtered=questions.filter(q=>
 
 q.question.toLowerCase().includes(text)
 
 );
 
-if(list.length==0){
+if(filtered.length==0){
 
-document.getElementById("question").innerHTML="কোন প্রশ্ন পাওয়া যায়নি";
+document.getElementById("question").innerHTML="❌ কোনো প্রশ্ন পাওয়া যায়নি";
 
 document.getElementById("answer").style.display="none";
+
+document.getElementById("current").innerHTML="0";
 
 document.getElementById("total").innerHTML="0";
 
@@ -470,29 +407,22 @@ current=0;
 
 loadQuestion();
 
-});
+};
 
-loadQuestion();
+window.onload=loadQuestion;
 
  </script>
 
-  <footer style="background:#02284f;color:white;text-align:center;padding:20px;margin-top:40px;">
+<footer>
 
-<h3>Learning Skills</h3>
+<h2>📚 Learning Skills</h2>
 
-<p>India General Knowledge</p>
+<p>India General Knowledge Portal</p>
 
-<a href="index.html"
-style="display:inline-block;
-margin-top:10px;
-padding:10px 20px;
-background:#00aaff;
-color:white;
-text-decoration:none;
-border-radius:8px;">
+<br>
 
+<a href="index.html" class="home">
 🏠 Home Page
-
 </a>
 
 <p style="margin-top:20px;">
